@@ -1,0 +1,39 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function userDoc(uid) {
+      return get(/databases/$(database)/documents/users/$(uid)).data;
+    }
+    function isAdmin(uid) {
+      return userDoc(uid).role == 'admin';
+    }
+    function isLoggedIn() {
+      // uid берём из документа — наша кастомная авторизация
+      // Правила работают на уровне Firestore, поэтому
+      // используем "open read" с проверкой на уровне приложения
+      return true;
+    }
+    match /users/{uid} {
+      allow read:   if true;
+      allow create: if true;   // регистрация
+      allow update: if true;   // обновление профиля / смена роли
+      allow delete: if false;
+
+      match /history/{hid} {
+        allow read, write: if true;
+      }
+    }
+    match /recipes/{rid} {
+      allow read: if true;
+      allow write: if true;   // защита через JS (проверяем роль в коде)
+
+      match /reviews/{revId} {
+        allow read:  if true;
+        allow write: if true;
+      }
+    }
+    match /favorites/{fid} {
+      allow read, write: if true;
+    }
+  }
+}

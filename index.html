@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>КнигаРецептов</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">Книга<span>Рецептов</span></a>
+    <nav id="nav"></nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-top">
+      <h1>Готовь с удовольствием</h1>
+      <p>Открывай новые вкусы, сохраняй любимые рецепты</p>
+    </div>
+
+    <div class="search-wrap">
+      <input id="searchInput" type="text" placeholder="Найти рецепт…">
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <div class="chips">
+      <button class="chip active" data-cat="all">Все</button>
+      <button class="chip" data-cat="Завтрак">🥞 Завтрак</button>
+      <button class="chip" data-cat="Супы">🍜 Супы</button>
+      <button class="chip" data-cat="Салаты">🥗 Салаты</button>
+      <button class="chip" data-cat="Выпечка">🥐 Выпечка</button>
+      <button class="chip" data-cat="Десерты">🍰 Десерты</button>
+      <button class="chip" data-cat="Ужины">🍝 Ужины</button>
+      <button class="chip" data-cat="Напитки">🥤 Напитки</button>
+    </div>
+
+    <div class="sort-row">
+      <select id="sortSel">
+        <option value="createdAt">Новые</option>
+        <option value="avgRating">По рейтингу</option>
+        <option value="ratingCount">По популярности</option>
+        <option value="cookTime">По времени</option>
+      </select>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="load-more">
+      <button class="btn outline" id="loadMoreBtn" hidden>Показать ещё</button>
+    </div>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+<script type="module" src="/js/index.js"></script>
+</body>
+</html>

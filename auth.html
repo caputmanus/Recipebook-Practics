@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Войти — КнигаРецептов</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="auth-page">
+  <div class="auth-box">
+    <div class="auth-logo">Книга<span>Рецептов</span></div>
+    <div class="auth-sub">Открывай новые вкусы каждый день</div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tabLogin">Войти</button>
+      <button class="auth-tab"        id="tabRegister">Регистрация</button>
+    </div>
+
+    <form id="authForm">
+      <div class="fg" id="nameGroup" style="display:none">
+        <label>Имя</label>
+        <input id="nameInput" type="text" placeholder="Как тебя зовут?">
+      </div>
+      <div class="fg">
+        <label>Email</label>
+        <input id="emailInput" type="email" placeholder="you@email.com" required>
+      </div>
+      <div class="fg">
+        <label>Пароль</label>
+        <input id="passInput" type="password" placeholder="Минимум 6 символов" required>
+      </div>
+      <div class="err" id="errMsg"></div>
+      <button type="submit" class="btn primary full" id="submitBtn">Войти</button>
+    </form>
+
+    <p style="text-align:center;margin-top:14px">
+      <a href="/" style="font-size:13px;color:var(--muted)">← Вернуться к рецептам</a>
+    </p>
+  </div>
+</div>
+
+<script type="module" src="/js/auth.js"></script>
+</body>
+</html>

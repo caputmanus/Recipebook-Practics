@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ — КнигаРецептов</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="admin-layout">
+
+  <aside class="admin-side">
+    <div class="admin-logo">
+      🍴 КнигаРецептов
+      <small id="adminName"></small>
+    </div>
+    <nav class="admin-nav">
+      <a href="#" data-sec="recipes" class="active">📋 Рецепты</a>
+      <a href="#" data-sec="users">👥 Пользователи</a>
+      <a href="#" data-sec="reviews">💬 Отзывы</a>
+    </nav>
+    <div class="admin-foot">
+      <a href="/">← На сайт</a>
+      <button id="logoutBtn">Выйти</button>
+    </div>
+  </aside>
+
+  <main id="main">
+    <div class="loading"><div class="spinner"></div>Проверяем доступ…</div>
+  </main>
+
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <h2 id="modalTitle">Рецепт</h2>
+    <div class="fg"><label>Название *</label><input id="fTitle" type="text"></div>
+    <div class="fg">
+      <label>Категория</label>
+      <select id="fCat">
+        <option value="">— выбери —</option>
+        <option>Завтрак</option><option>Супы</option><option>Салаты</option>
+        <option>Выпечка</option><option>Десерты</option><option>Ужины</option><option>Напитки</option>
+      </select>
+    </div>
+    <div class="fg"><label>Описание</label><textarea id="fDesc" style="min-height:70px"></textarea></div>
+    <div class="grid3">
+      <div class="fg"><label>Время (мин)</label><input id="fTime" type="number"></div>
+      <div class="fg"><label>Порций</label><input id="fServ" type="number"></div>
+      <div class="fg">
+        <label>Сложность</label>
+        <select id="fDiff"><option value="">—</option><option>Легко</option><option>Средне</option><option>Сложно</option></select>
+      </div>
+    </div>
+    <div class="fg">
+      <label>Ингредиенты (каждый с новой строки)</label>
+      <textarea id="fIngr" style="min-height:90px" placeholder="200г муки&#10;2 яйца"></textarea>
+    </div>
+    <div class="fg">
+      <label>Шаги приготовления (каждый с новой строки)</label>
+      <textarea id="fSteps" style="min-height:90px" placeholder="Смешать муку&#10;Выпекать 20 мин"></textarea>
+    </div>
+    <div class="modal-foot">
+      <button class="btn ghost" id="closeModal">Отмена</button>
+      <button class="btn primary" id="saveModalBtn">Сохранить</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script type="module" src="/js/admin.js"></script>
+</body>
+</html>

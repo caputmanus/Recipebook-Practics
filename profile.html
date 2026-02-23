@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — КнигаРецептов</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">Книга<span>Рецептов</span></a>
+    <nav id="nav"></nav>
+  </div>
+</header>
+
+<div class="profile-layout">
+  <aside class="sidebar">
+    <div class="ava" id="ava">?</div>
+    <h2 id="uname">—</h2>
+    <p id="uemail">—</p>
+    <nav class="side-nav">
+      <a href="#" data-tab="history" class="active">📝 Мои отзывы</a>
+      <a href="#" data-tab="favorites">❤️ Избранное</a>
+      <a href="#" data-tab="settings">⚙️ Настройки</a>
+      <a href="/admin.html" id="adminLink" style="color:var(--accent)" hidden>🔧 Админ-панель</a>
+    </nav>
+  </aside>
+
+  <main class="main-col" id="tabContent">
+    <div class="loading"><div class="spinner"></div></div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+<script type="module" src="/js/profile.js"></script>
+</body>
+</html>
