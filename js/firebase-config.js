@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  /* апи */
+  /* Вставьте свой АПИ все дела */
 };
 
 const app = initializeApp(firebaseConfig);
